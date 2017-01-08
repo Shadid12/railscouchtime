@@ -1,0 +1,31 @@
+<h1>Lists of Movies</h1>
+
+<div class='row center'>
+    <%= link_to "Show all", root_path %>
+</div>
+
+<div>
+
+<%= form_tag("/", method: "get") do %>
+  <div class="input-field col s12">
+      <%= text_field_tag(:search) %>
+      <%= submit_tag("Search") %>
+      <br></br>
+  </div>
+<% end %>
+
+</div>
+
+
+<div class="row">
+
+<% @listings.each do |t| %>
+    <div class="col s2"><span>
+        <%= link_to image_tag(t.cover, size: "150x150"), listing_path(t) %>
+    </span>
+    <br><%= t.title %></br>
+    </div>
+<% end %>
+
+</div>
+
