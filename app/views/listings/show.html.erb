@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+    <h3>
+        <%= @listing.title %>
+    </h3>
+    <%= image_tag @listing.cover, size: '250x250' %>
+</div>
+<div class="center">
+<a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Play Video" id="send">
+    <i class="material-icons">play_circle_filled</i>
+</a>
+</div>
+<br></br>
+<div class="center">
+    <%= link_to "Back", root_path %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @listing.url %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<script>
+    $("#send").click(function(){
+        var path = "<%= @listing.url %>"
+        window.open(path);
+    });
+</script>

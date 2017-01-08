@@ -4,14 +4,21 @@
     <%= link_to "Show all", root_path %>
 </div>
 
-<div>
+<div class="row">
 
-<%= form_tag("/", method: "get") do %>
-  <div class="input-field col s12">
-      <%= text_field_tag(:search) %>
-      <%= submit_tag("Search") %>
-      <br></br>
-  </div>
+<%= form_tag("/", method: "get", class: "col s12") do %>
+<div class="row">
+    <div class="input-field col s6">
+          <%= text_field_tag(:search , "", class:"validate") %>
+          <label for="last_name">Search</label>
+          <%= submit_tag("Search", class: "waves-effect waves-light btn") %>
+          <br></br>
+    </div>
+</div>
+    
+</div>
+
+
 <% end %>
 
 </div>
